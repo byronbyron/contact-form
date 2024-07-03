@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Contact form</title>
+  <meta name="description" content="Contact Form">
+
+  <link href="./app.css" rel="stylesheet" />
+</head>
+<body>
+
+  <main>
+    <h1>Contact Us</h1>
+
+    <form action="" class="container">
+      <div class="form-group">
+        <label for="">First Name</label>
+        <input type="text" name="first_name">
+        <span>This field is required</span>
+      </div>
+    
+      <div class="form-group">
+        <label for="">Last Name</label>
+        <input type="text" name="last_name">
+        <span>This field is required</span>
+      </div>
+    
+      <div class="form-group">
+        <label for="">Email Address</label>
+        <input type="email" name="email">
+        <span>Please enter a valid email address</span>
+        <span>This field is required</span>
+      </div>
+      
+      <div class="form-group">
+        <label for="">Query Type</label>
+      
+        <div class="radio-group">
+          <div class="radio">
+            <input checked id="query-type-1" type="radio" value="" name="query-type" class="">
+            <label for="query-type-1" class="">General Enquiry</label>
+          </div>
+
+          <div class="radio">
+            <input id="query-type-2" type="radio" value="" name="query-type" class="">
+            <label for="query-type-2" class="">Support Request</label>
+          </div>
+        </div>
+
+        <span>Please select a query type</span>
+      </div>
+    
+      <div class="form-group">
+        <label for="">Message</label>
+        <textarea name="message" id=""></textarea>
+        <span>This field is required</span>
+      </div>
+    
+      <div class="form-group">
+        <label for="">I consent to being contacted by the team</label>
+        <input id="query-type-2" type="checkbox" value="" name="consent" class="">
+        <span>To submit this form, please consent to being contacted</span>
+      </div>
+    
+      <button>Submit</button>
+
+      <div class="message-success">
+        <h2>Message Sent!</h2>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+    </form>
+    
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="https://x.com/bwalkermills">Byron</a>.
+    </div>    
+  </main>
+
+</body>
+</html>
