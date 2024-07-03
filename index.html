@@ -13,66 +13,66 @@
 </head>
 <body>
 
-  <main>
+  <main class="container">
     <h1>Contact Us</h1>
 
-    <form action="" class="container">
+    <form action="">
       <div class="form-group">
-        <label for="">First Name</label>
-        <input type="text" name="first_name">
-        <span>This field is required</span>
+        <label for="first_name" class="form-label">First Name <span class="req">*</span></label>
+        <input type="text" id="first_name" name="first_name" class="form-control">
+        <span class="form-message">This field is required</span>
       </div>
     
       <div class="form-group">
-        <label for="">Last Name</label>
-        <input type="text" name="last_name">
-        <span>This field is required</span>
+        <label for="last_name" class="form-label">Last Name <span class="req">*</span></label>
+        <input type="text" id="last_name" name="last_name" class="form-control">
+        <span class="form-message">This field is required</span>
       </div>
     
       <div class="form-group">
-        <label for="">Email Address</label>
-        <input type="email" name="email">
-        <span>Please enter a valid email address</span>
-        <span>This field is required</span>
+        <label for="email" class="form-label">Email Address <span class="req">*</span></label>
+        <input type="email" id="email" name="email" class="form-control">
+        <span class="form-message">Please enter a valid email address</span>
+        <span class="form-message">This field is required</span>
       </div>
       
       <div class="form-group">
-        <label for="">Query Type</label>
+        <label for="query_type" class="form-label">Query Type <span class="req">*</span></label>
       
         <div class="radio-group">
           <div class="radio">
-            <input checked id="query-type-1" type="radio" value="" name="query-type" class="">
-            <label for="query-type-1" class="">General Enquiry</label>
+            <input id="query_type_1" type="radio" value="" name="query_type" class="form-check-input">
+            <label for="query_type_1" class="radio-label-btn">General Enquiry</label>
           </div>
 
           <div class="radio">
-            <input id="query-type-2" type="radio" value="" name="query-type" class="">
-            <label for="query-type-2" class="">Support Request</label>
+            <input id="query_type_2" type="radio" value="" name="query_type" class="form-check-input">
+            <label for="query_type_2" class="radio-label-btn">Support Request</label>
           </div>
         </div>
 
-        <span>Please select a query type</span>
+        <span class="form-message">Please select a query type</span>
       </div>
     
       <div class="form-group">
-        <label for="">Message</label>
-        <textarea name="message" id=""></textarea>
-        <span>This field is required</span>
+        <label for="message" class="form-label">Message <span class="req">*</span></label>
+        <textarea name="message" id="message" class="form-control"></textarea>
+        <span class="form-message">This field is required</span>
       </div>
     
       <div class="form-group">
-        <label for="">I consent to being contacted by the team</label>
-        <input id="query-type-2" type="checkbox" value="" name="consent" class="">
-        <span>To submit this form, please consent to being contacted</span>
+        <input id="consent" type="checkbox" value="" name="consent" class="">
+        <label for="consent" class="">I consent to being contacted by the team <span class="req">*</span></label>
+        <span class="form-message">To submit this form, please consent to being contacted</span>
       </div>
     
-      <button>Submit</button>
-
-      <div class="message-success">
-        <h2>Message Sent!</h2>
-        <p>Thanks for completing the form. We'll be in touch soon!</p>
-      </div>
+      <button class="btn">Submit</button>
     </form>
+
+    <div class="message-success">
+      <h2>Message Sent!</h2>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
     
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
