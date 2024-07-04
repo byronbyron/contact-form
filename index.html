@@ -37,17 +37,17 @@
       </div>
       
       <div class="form-group">
-        <label for="query_type" class="form-label">Query Type <span class="req">*</span></label>
+        <label class="form-label">Query Type <span class="req">*</span></label>
       
-        <div class="radio-group">
-          <div class="radio">
+        <div class="form-check-group">
+          <div class="form-radio">
             <input id="query_type_1" type="radio" value="" name="query_type" class="form-check-input">
-            <label for="query_type_1" class="radio-label-btn">General Enquiry</label>
+            <label for="query_type_1" class="form-check-btn">General Enquiry</label>
           </div>
 
-          <div class="radio">
+          <div class="form-radio">
             <input id="query_type_2" type="radio" value="" name="query_type" class="form-check-input">
-            <label for="query_type_2" class="radio-label-btn">Support Request</label>
+            <label for="query_type_2" class="form-check-btn">Support Request</label>
           </div>
         </div>
 
@@ -61,8 +61,11 @@
       </div>
     
       <div class="form-group">
-        <input id="consent" type="checkbox" value="" name="consent" class="">
-        <label for="consent" class="">I consent to being contacted by the team <span class="req">*</span></label>
+        <div class="form-check form-consent">
+          <input id="consent" type="checkbox" value="" name="consent" class="form-check-input">
+          <label for="consent" class="">I consent to being contacted by the team <span class="req">*</span></label>
+        </div>
+
         <span class="form-message">To submit this form, please consent to being contacted</span>
       </div>
     

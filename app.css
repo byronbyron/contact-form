@@ -79,19 +79,42 @@ textarea.form-control {
     outline: 0;
 }
 
-.radio {
+.form-check {
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 2rem;
+    margin-bottom: .125rem;
+}
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: -2.25rem;
+    margin-top: 0.875rem;
+}
+
+.form-radio {
     position: relative;
     margin-bottom: 1rem;
+}
+
+.form-consent {
+    line-height: 1.5;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    padding-left: 2.4375rem;
+}
+
+.form-radio .form-check-input {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
 }
 
 .form-check-input {
     flex-shrink: 0;
     width: 1.125rem;
     height: 1.125rem;
-    position: absolute;
-    top: 50%;
-    left: 1.5rem;
-    transform: translateY(-50%);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -100,9 +123,14 @@ textarea.form-control {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    border-radius: 50%;
     border: 2px solid var(--grey-medium);
-    opacity: 0.5;
+}
+
+.form-check-input[type=radio] {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    opacity: 0.4;
 }
 
 .form-check-input:checked {
@@ -120,12 +148,19 @@ textarea.form-control {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e")
 }
 
-.radio-label-btn {
+.form-check-input:checked[type=checkbox] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+.form-check-btn {
     font-size: 1.125rem;
-    display: block;
-    padding: 1rem 1rem 1rem 3.375rem;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem 0.5rem 3.375rem;
     border: 1px solid var(--grey-medium);
     border-radius: 0.5rem;
+    cursor: pointer;
+    min-height: 50px;
 }
 
 .form-message {
@@ -139,7 +174,7 @@ textarea.form-control {
     line-height: 1.5;
     display: block;
     width: 100%;
-    padding: 1.125rem;
+    padding: 1rem;
     color: var(--white);
     text-align: center;
     text-decoration: none;
