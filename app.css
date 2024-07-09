@@ -26,7 +26,7 @@ body {
 h1 {
     font-size: 1.875rem;
     margin-top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1em;
     color: var(--grey-darker);
 }
 
@@ -55,7 +55,7 @@ h1 {
 .form-control {
     display: block;
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -79,6 +79,10 @@ textarea.form-control {
     outline: 0;
 }
 
+.form-check-group {
+    margin-top: 0.5rem;
+}
+
 .form-check {
     display: block;
     min-height: 1.5rem;
@@ -89,7 +93,7 @@ textarea.form-control {
 .form-check .form-check-input {
     float: left;
     margin-left: -2.25rem;
-    margin-top: 0.875rem;
+    margin-right: 1.125rem;
 }
 
 .form-radio {
@@ -102,12 +106,15 @@ textarea.form-control {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
     padding-left: 2.4375rem;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
 }
 
 .form-radio .form-check-input {
     position: absolute;
     top: 50%;
-    left: 1.5rem;
+    left: 1.625rem;
     transform: translateY(-50%);
 }
 
@@ -139,13 +146,19 @@ textarea.form-control {
     opacity: 1;
 }
 
-.form-check-input:checked + label {
+.form-check-input:checked[type=radio] {
+    background-color: var(--green-light);
+    border-color: var(--green-medium);
+    opacity: 1;
+}
+
+.form-check-input:checked[type=radio] + label {
     background-color: var(--green-light);
     border-color: var(--green-medium);
 }
 
 .form-check-input:checked[type=radio] {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e")
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2.6' fill='%230c7d69'/%3e%3c/svg%3e");
 }
 
 .form-check-input:checked[type=checkbox] {
@@ -156,11 +169,12 @@ textarea.form-control {
     font-size: 1.125rem;
     display: flex;
     align-items: center;
-    padding: 0.5rem 1rem 0.5rem 3.375rem;
+    padding: 0.5rem 1rem 0.5rem 3.75rem;
     border: 1px solid var(--grey-medium);
     border-radius: 0.5rem;
     cursor: pointer;
     min-height: 50px;
+    color: var(--grey-darker);
 }
 
 .form-message {
@@ -195,3 +209,49 @@ textarea.form-control {
 
 .attribution { display: none; font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 128px;
+        padding-bottom: 128px;
+    }
+
+    .container {
+        max-width: 736px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2.5rem;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -0.5rem;
+        margin-left: -0.5rem;
+    }
+
+    .row > * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+
+    .col {
+        flex: 1 0 0%;
+    }
+
+    textarea.form-control {
+        min-height: 105px;
+    }
+
+    .form-consent {
+        margin-top: 1.75rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .form-radio {
+        margin-bottom: 0;
+    }
+}
