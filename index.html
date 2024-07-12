@@ -16,30 +16,26 @@
   <main class="container">
     <h1>Contact Us</h1>
 
-    <form action="">
+    <form action="" class="form" id="form" novalidate>
       <div class="row">
         <div class="col">
           <div class="form-group">
             <label for="first_name" class="form-label">First Name <span class="req">*</span></label>
-            <input type="text" id="first_name" name="first_name" class="form-control">
-            <span class="form-message">This field is required</span>
+            <input type="text" id="first_name" name="first_name" class="form-control" required>
           </div>
         </div>
 
         <div class="col">
           <div class="form-group">
             <label for="last_name" class="form-label">Last Name <span class="req">*</span></label>
-            <input type="text" id="last_name" name="last_name" class="form-control">
-            <span class="form-message">This field is required</span>
+            <input type="text" id="last_name" name="last_name" class="form-control" required>
           </div>
         </div>
       </div>
     
       <div class="form-group">
         <label for="email" class="form-label">Email Address <span class="req">*</span></label>
-        <input type="email" id="email" name="email" class="form-control">
-        <span class="form-message">Please enter a valid email address</span>
-        <span class="form-message">This field is required</span>
+        <input type="email" id="email" name="email" class="form-control" required>
       </div>
       
       <div class="form-group">
@@ -49,36 +45,32 @@
           <div class="row">
             <div class="col">
               <div class="form-radio">
-                <input id="query_type_1" type="radio" value="" name="query_type" class="form-check-input">
+                <input id="query_type_1" type="radio" value="general_enquiry" name="query_type" class="form-check-input" required>
                 <label for="query_type_1" class="form-check-btn">General Enquiry</label>
               </div>
             </div>
             
             <div class="col">
               <div class="form-radio">
-                <input id="query_type_2" type="radio" value="" name="query_type" class="form-check-input">
+                <input id="query_type_2" type="radio" value="support_request" name="query_type" class="form-check-input">
                 <label for="query_type_2" class="form-check-btn">Support Request</label>
               </div>
             </div>
           </div>
         </div>
-
-        <span class="form-message">Please select a query type</span>
       </div>
     
       <div class="form-group">
         <label for="message" class="form-label">Message <span class="req">*</span></label>
-        <textarea name="message" id="message" class="form-control"></textarea>
-        <span class="form-message">This field is required</span>
+        <textarea name="message" id="message" class="form-control" required></textarea>
+        <span class="error-message"></span>
       </div>
     
       <div class="form-group">
         <div class="form-check form-consent">
-          <input id="consent" type="checkbox" value="" name="consent" class="form-check-input">
+          <input id="consent" type="checkbox" value="yes" name="consent" class="form-check-input" required>
           <label for="consent" class="">I consent to being contacted by the team <span class="req">*</span></label>
         </div>
-
-        <span class="form-message">To submit this form, please consent to being contacted</span>
       </div>
     
       <button class="btn">Submit</button>
@@ -94,6 +86,25 @@
       Coded by <a href="https://x.com/bwalkermills">Byron</a>.
     </div>    
   </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.1/dist/jquery.validate.min.js"></script>
+  <script>
+    $("#form").validate({
+      errorElement: "div",
+      errorPlacement: function(error, element) {
+        error.appendTo(element.closest(".form-group"));
+      },
+      messages: {
+        consent: {
+          required: 'To submit this form, please consent to being contacted'
+        },
+        query_type: {
+          required: 'Please select a query type'
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>
